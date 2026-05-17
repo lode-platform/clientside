@@ -146,6 +146,7 @@ $(function() {
     });
     $("#sidebar-responsive-position-relative").on("input",function(event){
         let text_el = $('#sidebar-responsive-position-relative-text');
+        let text = null;
         let val = $(this).val();
         if (val == 0) {
             text = ' None';
@@ -167,6 +168,7 @@ $(function() {
     $("#sidebar-responsive-position-overlay").on("input",function(event){
         let text_el = $('#sidebar-responsive-position-overlay-text');
         let val = $(this).val();
+        let text = null;
         if (val == 0) {
             text = ' None';
         } else if (val == 1) {
@@ -303,7 +305,7 @@ function updateFormFields() {
 
     value = panelSettings.get('sidebar-expander-position');
     $("input:radio[name='sidebar-expander-position-radio']").prop('checked',false);
-    $('#sidebar-expander-position-'+value).prop('checked',true);
+    $('#sidebar-expander-'+value).prop('checked',true);
 
     value = panelSettings.autoload();
     if (value !== null) {
