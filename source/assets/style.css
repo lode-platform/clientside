@@ -1,0 +1,9 @@
+body {
+    font-size: 16px;
+}
+
+
+#preview-iframe {
+    width: 100%;
+    height: 100%;
+}

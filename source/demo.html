@@ -1,0 +1,1105 @@
+<!DOCTYPE html>
+<!--suppress JSUnresolvedReference -->
+<html lang="en" data-bs-theme="auto">
+
+<head>
+    <meta charset="utf-8">
+    <title>Bootstrap 5 Layout Builder</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="" />
+    <link rel="stylesheet" href="assets/style.css">
+    <link rel="stylesheet" href="assets/panel.css">
+    <link rel="stylesheet" href="assets/sidebar.css">
+    <link href="libraries/bootstrap-5.3.8/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="assets/cq.layouts.css">
+    <link rel="stylesheet" href="assets/cq.layouts.halfs.css">
+    <link rel="stylesheet" href="assets/bootstrap.plus.css">
+    <link rel="stylesheet" href="libraries/fontawesome/css/all.min.css">
+    <link rel="stylesheet" href="libraries/summernote/summernote.css">
+    <link rel="stylesheet" href="libraries/summernote/summernote-bs5.css">
+    <link rel="stylesheet" href="libraries/dropzone/dropzone.css">
+    <script src="libraries/jquery/jquery-3.7.1.min.js"></script>
+    <script src="libraries/splitjs/split.min.js"></script>
+    <script src="libraries/bootstrap-5.3.8/js/bootstrap.bundle.min.js"></script>
+    <script src="libraries/summernote/summernote.js"></script>
+    <script src="libraries/summernote/summernote-bs5.js"></script>
+    <script src="libraries/dropzone/dropzone-min.js"></script>
+    <script src="assets/classes.js"></script>
+    <script src="assets/panel.js"></script>
+    <script src="assets/color-scheme.js"></script>
+
+
+
+
+</head>
+
+<body class="sticky-header-nav nav-style-paged bg-body-tertiary">
+
+<nav class="navbar navbar-expand-lg bg-body-tertiary" aria-label="Offcanvas navbar large">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="#">
+            General Navbar</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar2" aria-controls="offcanvasNavbar2" aria-label="Toggle navigation">
+                 <span class="navbar-toggler-icon">
+                </span>
+        </button>
+        <div class="offcanvas offcanvas-end text-body-tertiary" tabindex="-1" id="offcanvasNavbar2" aria-labelledby="offcanvasNavbar2Label">
+            <div class="offcanvas-header">
+                <h5 class="offcanvas-title" id="offcanvasNavbar2Label">
+                    Offcanvas</h5>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close">
+                </button>
+            </div>
+            <div class="offcanvas-body">
+                <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">
+                            Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">
+                            Link</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+
+                            Dropdown
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li>
+                                <a class="dropdown-item" href="#">
+                                    Action</a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="#">
+                                    Another action</a>
+                            </li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="#">
+                                    Something else here</a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+                <form class="d-flex mt-3 mt-lg-0" role="search">
+                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-success" type="submit">
+                        Search</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</nav>
+<div class="d-flex left-menu-wrapper">
+    <aside class="left-menu-aside sidebar-sticky sidebar-lg">
+        <button class="toggle-btn" onclick="toggleSidebar()">
+            <i class="fas fa-chevron-left"></i>
+        </button>
+        <nav id="left-sidebar-nav" class="left-sidebar sidebar d-flex flex-column flex-shrink-0 h-100 overflow-y-auto expander-left expander-caret">
+
+
+            <div class="p-4">
+                <h4 class="logo-text fw-bold mb-0">NexusFlow</h4>
+                <p class="text-muted small">Dashboard</p>
+            </div>
+
+            <div class="nav flex-column">
+                <a href="#page-dashboard" class="nav-link sidebar-link active">
+                    <i class="fas fa-home me-3"></i>
+                    <span>Dashboard</span>
+                </a>
+                <a href="#page-analytics" class="nav-link sidebar-link ">
+                    <i class="fas fa-chart-bar me-3"></i>
+                    <span>Analytics</span>
+                </a>
+                <a href="#page-customers" class="nav-link sidebar-link ">
+                    <i class="fas fa-users me-3"></i>
+                    <span>Customers</span>
+                </a>
+
+                <a class="nav-link sidebar-link sidebar-expander  collapsed" data-bs-toggle="collapse" href="#collapse-products" role="button" aria-expanded="false" aria-controls="collapse-products">
+                    <i class="fas fa-box mx-2"></i>
+                    <span>Products</span>
+                </a>
+                <div class="collapse ps-3" id="collapse-products">
+                    <a href="#page-product-editor" class="nav-link sidebar-link  d-block">
+                        <i class="fas fa-users me-3"></i>
+                        <span>Product Editor</span>
+                    </a>
+                    <a href="#page-product-list" class="nav-link sidebar-link  d-block">
+                        <i class="fas fa-users me-3"></i>
+                        <span>List Products</span>
+                    </a>
+
+                </div>
+                <a href="#page-forms" class="nav-link sidebar-link ">
+                    <i class="fas fa-gear me-3"></i>
+                    <span>Forms</span>
+                </a>
+                <a href="#page-settings" class="nav-link sidebar-link ">
+                    <i class="fas fa-gear me-3"></i>
+                    <span>Settings</span>
+                </a>
+            </div>
+        </nav>
+    </aside>
+    <main class="main-content bg-body-tertiary p-0 w-100 cq-outer">
+
+        <div data-section-group="admin" id="section-group-admin">
+            <div data-section="dashboard" id="page-dashboard-block" class="page page-1"><span class="admin-page-anchor" id="page-dashboard"></span>
+                <div class="container-fluid px-5">
+                    <div class="row g-4 mb-4">
+                        <div class="col-12"><h4>Dashboard:</h4></div>
+                        <div class="col-cq-lg-3 col-cq-md-6">
+                            <div class="card h-100">
+                                <div class="card-header">
+                                    <h5 class="card-title">Title AAA</h5>
+                                </div>
+                                <div class="card-body">
+                                    <h6 class="card-subtitle mb-2 text-body-secondary">subtitle 1</h6>
+                                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card’s content.<br/><br/>More text</p>
+                                    <a href="#" class="card-link">Card link</a>
+                                    <a href="#" class="card-link">Another link</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-cq-lg-3 col-cq-md-6">
+                            <div class="card h-100">
+                                <div class="card-header">
+                                    <h5 class="card-title">Title BBB</h5>
+                                </div>
+                                <div class="card-body">
+                                    <h6 class="card-subtitle mb-2 text-body-secondary">subtitle 1</h6>
+                                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card’s content.<br/><br/>More text</p>
+                                    <a href="#" class="card-link">Card link</a>
+                                    <a href="#" class="card-link">Another link</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-cq-lg-3 col-cq-md-6">
+                            <div class="card h-100">
+                                <div class="card-header">
+                                    <h5 class="card-title">Title CCC</h5>
+                                </div>
+                                <div class="card-body">
+                                    <h6 class="card-subtitle mb-2 text-body-secondary">subtitle 1</h6>
+                                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card’s content.<br/><br/>More text</p>
+                                    <a href="#" class="card-link">Card link</a>
+                                    <a href="#" class="card-link">Another link</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-cq-lg-3 col-cq-md-6">
+                            <div class="card h-100">
+                                <div class="card-header">
+                                    <h5 class="card-title">Title DDD</h5>
+                                </div>
+                                <div class="card-body">
+                                    <h6 class="card-subtitle mb-2 text-body-secondary">subtitle 1</h6>
+                                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card’s content.<br/><br/>More text</p>
+                                    <a href="#" class="card-link">Card link</a>
+                                    <a href="#" class="card-link">Another link</a>
+                                </div>
+                                <div class="card-footer">
+                                    Card footer
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row g-4 mb-4">
+                        <div class="col-cq-lg-3 col-cq-md-6">
+                            <div class="card h-100">
+                                <div class="card-header">
+                                    <h5 class="card-title">Title 1</h5>
+                                </div>
+                                <div class="card-body">
+                                    <h6 class="card-subtitle mb-2 text-body-secondary">subtitle 1</h6>
+                                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card’s content.<br/><br/>More text</p>
+                                    <a href="#" class="card-link">Card link</a>
+                                    <a href="#" class="card-link">Another link</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-cq-lg-3 col-cq-md-6">
+                            <div class="card h-100">
+                                <div class="card-body">
+                                    <h5 class="card-title">Title 2</h5>
+                                    <h6 class="card-subtitle mb-2 text-body-secondary">subtitle 1</h6>
+                                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card’s content.</p>
+                                    <a href="#" class="card-link">Card link</a>
+                                    <a href="#" class="card-link">Another link</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-cq-lg-3 col-cq-md-6">
+                            <div class="card h-100">
+                                <div class="card-body">
+                                    <h5 class="card-title">Title 3</h5>
+                                    <h6 class="card-subtitle mb-2 text-body-secondary">subtitle 1</h6>
+                                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card’s content.<br/><br/>More text<br/><br/>More text</p>
+                                    <a href="#" class="card-link">Card link</a>
+                                    <a href="#" class="card-link">Another link</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-cq-lg-3 col-cq-md-6">
+                            <div class="card h-100">
+                                <div class="card-body">
+                                    <h5 class="card-title">Title 4</h5>
+                                    <h6 class="card-subtitle mb-2 text-body-secondary">subtitle 1</h6>
+                                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card’s content.</p>
+                                    <a href="#" class="card-link">Card link</a>
+                                    <a href="#" class="card-link">Another link</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row gy-4">
+                        <div class="col-12 col-cq-lg-6">
+                            <div class="card mb-4">
+                                <div class="card-body">
+                                    <h5 class="card-title">Title A</h5>
+                                    <h6 class="card-subtitle mb-2 text-body-secondary">subtitle A</h6>
+                                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card’s content.</p>
+                                    <a href="#" class="card-link">Card link</a>
+                                    <a href="#" class="card-link">Another link</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-cq-lg-6">
+                            <div class="card mb-4">
+                                <div class="card-body">
+                                    <h5 class="card-title">Title B</h5>
+                                    <h6 class="card-subtitle mb-2 text-body-secondary">subtitle B</h6>
+                                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card’s content.</p>
+                                    <a href="#" class="card-link">Card link</a>
+                                    <a href="#" class="card-link">Another link</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-cq-lg-4 col-cq-md-2">
+                            <div class="card mb-4">
+                                <div class="card-body">
+                                    <h5 class="card-title">Title 1</h5>
+                                    <h6 class="card-subtitle mb-2 text-body-secondary">subtitle 1</h6>
+                                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card’s content.</p>
+                                    <a href="#" class="card-link">Card link</a>
+                                    <a href="#" class="card-link">Another link</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-cq-lg-4 col-cq-md-2">
+                            <div class="card mb-4">
+                                <div class="card-body">
+                                    <h5 class="card-title">Title 2</h5>
+                                    <h6 class="card-subtitle mb-2 text-body-secondary">subtitle 1</h6>
+                                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card’s content.</p>
+                                    <a href="#" class="card-link">Card link</a>
+                                    <a href="#" class="card-link">Another link</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-cq-lg-4 col-cq-md-2">
+                            <div class="card mb-4">
+                                <div class="card-body">
+                                    <h5 class="card-title">Title 3</h5>
+                                    <h6 class="card-subtitle mb-2 text-body-secondary">subtitle 1</h6>
+                                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card’s content.</p>
+                                    <a href="#" class="card-link">Card link</a>
+                                    <a href="#" class="card-link">Another link</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="card mb-4">
+                                <div class="card-body">
+                                    <h5 class="card-title">Title</h5>
+                                    <h6 class="card-subtitle mb-2 text-body-secondary">subtitle 1</h6>
+                                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card’s content.</p>
+                                    <a href="#" class="card-link">Card link</a>
+                                    <a href="#" class="card-link">Another link</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div data-section="analytics" id="page-analytics-block" class="page page-2"><span class="admin-page-anchor" id="page-analytics"></span>
+                <div class="container-fluid px-5">
+                    <div class="row g-4 mb-4">
+                        <div class="col-12"><h4>Analytics:</h4></div>
+                        <div class="col">
+                            <div class="card h-100">
+                                <div class="card-header">
+                                    <h5 class="card-title">Analytics Title AAA</h5>
+                                </div>
+                                <div class="card-body">
+                                    <h6 class="card-subtitle mb-2 text-body-secondary">subtitle 1</h6>
+                                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card’s content.<br/><br/>More text</p>
+                                    <a href="#" class="card-link">Card link</a>
+                                    <a href="#" class="card-link">Another link</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div data-section="customers" id="page-customers-block" class="page page-3"><span class="admin-page-anchor" id="page-customers"></span>
+                <div class="container-fluid px-5">
+                    <div class="row g-4 mb-4">
+                        <div class="col-12"><h4>Customers:</h4></div>
+                        <div class="col">
+                            <div class="card h-100">
+                                <div class="card-header">
+                                    <h5 class="card-title">Customers Title AAA</h5>
+                                </div>
+                                <div class="card-body">
+                                    <h6 class="card-subtitle mb-2 text-body-secondary">subtitle 1</h6>
+                                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card’s content.<br/><br/>More text</p>
+                                    <a href="#" class="card-link">Card link</a>
+                                    <a href="#" class="card-link">Another link</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div data-section="product-editor" id="page-product-editor-block" class="page page-4"><span class="admin-page-anchor" id="page-product-editor"></span>
+                <div class="container-fluid px-5">
+                    <div class="row g-4 mb-4">
+                        <div class="col-12">
+                            <div class="card h-100">
+                                    <div class="card-header">
+                                        <h5 class="card-title float-start">Product Editor:</h5>
+                                        <div class="float-end">
+                                            <button class="btn btn-primary">Cancel</button>
+                                            <button class="btn btn-primary">Update</button>
+                                        </div>
+                                    </div>
+                            </div>
+                        </div>
+
+
+                        <div class="col-cq-lg-8">
+                            <div class="card h-100">
+                                <div class="card-header">
+                                    <h5 class="card-title">Product Information</h5>
+                                </div>
+                                <div class="card-body">
+                                    <h6 class="card-subtitle mb-2 text-body-secondary">Helpful information about how the product is configured:</h6>
+                                    <div class="form-style-rows form-block">
+
+                                        <label class="col-form-label" for="input-product-name">Name:</label>
+                                        <div>
+                                            <input type="text" name="name" id="input-product-name" placeholder="2nd Input" class="form-control"/>
+                                            <div class="input-feedback invalid-feedback">Help Text</div>
+                                        </div>
+
+                                        <label class="col-form-label" for="input-product-class">Class:</label>
+                                        <div>
+                                            <input type="text" name="name" id="input-product-class" placeholder="2nd Input" class="form-control"/>
+                                            <div class="input-feedback invalid-feedback">Help Text</div>
+                                        </div>
+
+                                        <label class="col-form-label" for="input-product-model-no">Model #:</label>
+                                        <div>
+                                            <input type="text" name="name" id="input-product-model-no" placeholder="2nd Input" class="form-control"/>
+                                            <div class="input-feedback invalid-feedback">Help Text</div>
+                                        </div>
+                                    </div>
+                                    <div class="form-span"><hr class="border-secondary"></div>
+                                    <h6 class="card-subtitle mb-2 text-body-secondary">Categories:</h6>
+                                    <div class="form-style-rows form-block">
+                                        Some : Example : Nested : Category
+                                    </div>
+
+                                    <label class="col-form-label" for="input-1">Add Category:</label>
+                                    <div class="input-group mb-3">
+                                        <!--suppress HtmlFormInputWithoutLabel -->
+                                        <input type="text" name="category-add" id="input-product-category-add" placeholder="Add to Category" class="form-control"/>
+                                        <button class="btn btn-primary input-group-end">Add</button>
+                                        <div class="invalid-feedback">Help Text</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-cq-lg-4">
+                            <div class="card h-100">
+                                <div class="card-header">
+                                    <h5 class="card-title">Pricing and Availability</h5>
+                                </div>
+                                <div class="card-body">
+
+
+
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="row g-4 mb-4">
+                        <div class="col-cq-lg-12">
+                            <div class="card h-100">
+
+                                <div class="card-header">
+                                    <h5 class="card-title">Description:</h5>
+                                </div>
+                                <div class="card-body p-0">
+                                    <!--suppress HtmlFormInputWithoutLabel -->
+                                    <textarea id="product-description" name="product-description"></textarea>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row g-4 mb-4">
+                        <div class="col-cq-lg-6">
+                            <div class="card h-100">
+
+                                <div class="card-header">
+                                    <h5 class="card-title">Product Media</h5>
+                                </div>
+                                <div class="card-body">
+                                    <h6 class="card-subtitle mb-2 text-body-secondary">Helpful information about how the product is configured:</h6>
+
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="col-cq-lg-6">
+                            <div class="card h-100">
+
+                                <div class="card-header">
+                                    <h5 class="card-title">Upload Media</h5>
+                                </div>
+                                <div class="card-body">
+                                    <h6 class="card-subtitle mb-2 text-body-secondary">Helpful information about how the product is configured:</h6>
+                                    <div class="form-style-rows">
+                                        <form action="#" class="dropzone" id="product-media-dropzone" style="background: transparent;border: 2px dashed;"></form>
+                                    </div>
+
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="row g-4 mb-4">
+                        <div class="col-cq-lg-6">
+                            <div class="card h-100">
+
+                                <div class="card-header">
+                                    <h5 class="card-title">Specifications</h5>
+                                </div>
+                                <div class="card-body">
+                                    <h6 class="card-subtitle mb-2 text-body-secondary">Helpful information about how the product is configured:</h6>
+
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="col-cq-lg-6">
+                            <div class="card h-100">
+
+                                <div class="card-header">
+                                    <h5 class="card-title">Product Options</h5>
+                                </div>
+                                <div class="card-body">
+
+
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+
+
+
+
+
+                    <div class="row g-4 mb-4">
+                        <div class="col-12">
+                            <div class="card h-100">
+                                <div class="card-header">
+                                    <div class="float-end">
+                                        <button class="btn btn-primary">Cancel</button>
+                                        <button class="btn btn-primary">Update</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div data-section="product-list" id="page-product-list-block" class="page page-5"><span class="admin-page-anchor" id="page-product-list"></span>
+                <div class="container-fluid px-5">
+                    <div class="row g-4 mb-4">
+                        <div class="col-12"><h4>Product List:</h4></div>
+                        <div class="col-cq-lg-3 col-cq-md-6">
+                            <div class="card h-100">
+                                <div class="card-header">
+                                    <h5 class="card-title">Product List Title AAA</h5>
+                                </div>
+                                <div class="card-body">
+                                    <h6 class="card-subtitle mb-2 text-body-secondary">subtitle 1</h6>
+                                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card’s content.<br/><br/>More text</p>
+                                    <a href="#" class="card-link">Card link</a>
+                                    <a href="#" class="card-link">Another link</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div data-section="forms" id="page-forms-block" class="page page-6"><span class="admin-page-anchor" id="page-forms"></span>
+                <div class="container-fluid px-5">
+                    <div class="row g-4 mb-4">
+                        <div class="col-12"><h4>Forms:</h4></div>
+                        <div class="col-cq-lg-3 col-cq-md-6">
+                            <div class="card h-100">
+                                <form>
+                                    <div class="card-header">
+                                        <h5 class="card-title">Title AAA</h5>
+                                    </div>
+                                    <div class="card-body">
+                                        <h6 class="card-subtitle mb-2 text-body-secondary">Form Input Fields:</h6>
+                                        <div class="form-style-rows form-block">
+
+                                            <label class="col-form-label" for="input-1">Label:</label>
+                                            <div class="input-group mb-3">
+                                                <input type="text" name="input-1" id="input-1" placeholder="1st Input" class="form-control is-invalid"/>
+                                                <span class="input-group-text" id="basic-addon1">@</span>
+                                                <button class="btn btn-primary input-group-end">Option</button>
+                                                <div class="invalid-feedback">Help Text</div>
+                                            </div>
+
+                                            <div class="form-span"><hr class="border-danger"/></div>
+
+                                            <label class="col-form-label" for="input-2">Label&nbsp;Two:</label>
+                                            <div>
+                                                <input type="text" name="input-2" id="input-2" placeholder="2nd Input" class="form-control is-invalid"/>
+                                                <div class="invalid-feedback">Help Text</div>
+                                            </div>
+                                            <label class="col-form-label" for="input-3">3:</label>
+                                            <div style="display: grid; column-gap: 10px; grid-template-columns: auto auto;">
+                                                <input type="text" name="input-3" id="input-3" class="form-control is-invalid" placeholder="Third Input"/>
+                                                <button class="btn btn-primary">Option</button>
+                                                <div class="invalid-feedback">Help Text</div>
+                                            </div>
+
+                                            <label class="col-form-label" for="input-4">Four:</label>
+                                            <div style="position: relative;">
+                                                <input type="text" name="input-4" id="input-4" class="form-control is-invalid" placeholder="Fourth Input"/>
+                                                <button class="btn btn-sm btn-outline-primary" style="position: absolute;top: 3px; right: 4px;background-color: var(--bs-body-bg);"><i class="fa fa-search" aria-hidden="true"></i></button>
+                                                <div class="invalid-feedback">Help Text</div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                        <div class="col-cq-lg-3 col-cq-md-6">
+                            <div class="card h-100">
+                                <div class="card-header">
+                                    <h5 class="card-title">Availability</h5>
+                                </div>
+                                <div class="card-body">
+                                    <h6 class="card-subtitle mb-2 text-body-secondary">Floating Form Fields</h6>
+
+
+
+
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-cq-lg-3 col-cq-md-6">
+                            <div class="card h-100">
+                                <div class="card-header">
+                                    <h5 class="card-title">Title CCC</h5>
+                                </div>
+                                <div class="card-body">
+                                    <h6 class="card-subtitle mb-2 text-body-secondary">subtitle 1</h6>
+                                    <div class="form-floating mb-3">
+                                        <select class="form-select" id="floatingSelect" aria-label="Floating label disabled select example">
+                                            <option>Open this select menu</option>
+                                            <option value="1">One</option>
+                                            <option value="2">Two</option>
+                                            <option value="3">Three</option>
+                                            <option value="4"></option>
+                                        </select>
+                                        <label for="floatingSelect">Works with selects</label>
+                                    </div>
+
+                                    <div class="form-floating mb-3">
+                                        <input type="email" class="form-control" id="floatingInputDisabled" placeholder="name@example.com" disabled>
+                                        <label for="floatingInputDisabled">Email address</label>
+                                    </div>
+                                    <div class="form-floating mb-3">
+                                        <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextareaDisabled" disabled></textarea>
+                                        <label for="floatingTextareaDisabled">Comments</label>
+                                    </div>
+
+
+                                    <div class="input-group">
+                                        <span class="input-group-text">@</span>
+                                        <div class="form-floating">
+                                            <input type="text" class="form-control" id="floatingInputGroup1" placeholder="Username">
+                                            <label for="floatingInputGroup1">Username</label>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-cq-lg-3 col-cq-md-6">
+                            <div class="card h-100">
+                                <div class="card-header">
+                                    <h5 class="card-title">Title DDD</h5>
+                                </div>
+                                <div class="card-body">
+                                    <h6 class="card-subtitle mb-2 text-body-secondary">subtitle 1</h6>
+                                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card’s content.<br/><br/>More text</p>
+                                    <a href="#" class="card-link">Card link</a>
+                                    <a href="#" class="card-link">Another link</a>
+                                </div>
+                                <div class="card-footer">
+                                    Card footer
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row g-4 mb-4">
+                        <div class="col-cq-lg-3 col-cq-md-6">
+                            <div class="card h-100">
+                                <div class="card-header">
+                                    <h5 class="card-title">Title 1</h5>
+                                </div>
+                                <div class="card-body">
+                                    <h6 class="card-subtitle mb-2 text-body-secondary">subtitle 1</h6>
+                                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card’s content.<br/><br/>More text</p>
+                                    <a href="#" class="card-link">Card link</a>
+                                    <a href="#" class="card-link">Another link</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-cq-lg-3 col-cq-md-6">
+                            <div class="card h-100">
+                                <div class="card-body">
+                                    <h5 class="card-title">Title 2</h5>
+                                    <h6 class="card-subtitle mb-2 text-body-secondary">subtitle 1</h6>
+                                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card’s content.</p>
+                                    <a href="#" class="card-link">Card link</a>
+                                    <a href="#" class="card-link">Another link</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-cq-lg-3 col-cq-md-6">
+                            <div class="card h-100">
+                                <div class="card-body">
+                                    <h5 class="card-title">Title 3</h5>
+                                    <h6 class="card-subtitle mb-2 text-body-secondary">subtitle 1</h6>
+                                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card’s content.<br/><br/>More text<br/><br/>More text</p>
+                                    <a href="#" class="card-link">Card link</a>
+                                    <a href="#" class="card-link">Another link</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-cq-lg-3 col-cq-md-6">
+                            <div class="card h-100">
+                                <div class="card-body">
+                                    <h5 class="card-title">Title 4</h5>
+                                    <h6 class="card-subtitle mb-2 text-body-secondary">subtitle 1</h6>
+                                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card’s content.</p>
+                                    <a href="#" class="card-link">Card link</a>
+                                    <a href="#" class="card-link">Another link</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row gy-4">
+                        <div class="col-12 col-cq-lg-6">
+                            <div class="card mb-4">
+                                <div class="card-body">
+                                    <h5 class="card-title">Title A</h5>
+                                    <h6 class="card-subtitle mb-2 text-body-secondary">subtitle A</h6>
+                                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card’s content.</p>
+                                    <a href="#" class="card-link">Card link</a>
+                                    <a href="#" class="card-link">Another link</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-cq-lg-6">
+                            <div class="card mb-4">
+                                <div class="card-body">
+                                    <h5 class="card-title">Title B</h5>
+                                    <h6 class="card-subtitle mb-2 text-body-secondary">subtitle B</h6>
+                                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card’s content.</p>
+                                    <a href="#" class="card-link">Card link</a>
+                                    <a href="#" class="card-link">Another link</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-cq-lg-4 col-cq-md-2">
+                            <div class="card mb-4">
+                                <div class="card-body">
+                                    <h5 class="card-title">Title 1</h5>
+                                    <h6 class="card-subtitle mb-2 text-body-secondary">subtitle 1</h6>
+                                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card’s content.</p>
+                                    <a href="#" class="card-link">Card link</a>
+                                    <a href="#" class="card-link">Another link</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-cq-lg-4 col-cq-md-2">
+                            <div class="card mb-4">
+                                <div class="card-body">
+                                    <h5 class="card-title">Title 2</h5>
+                                    <h6 class="card-subtitle mb-2 text-body-secondary">subtitle 1</h6>
+                                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card’s content.</p>
+                                    <a href="#" class="card-link">Card link</a>
+                                    <a href="#" class="card-link">Another link</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-cq-lg-4 col-cq-md-2">
+                            <div class="card mb-4">
+                                <div class="card-body">
+                                    <h5 class="card-title">Title 3</h5>
+                                    <h6 class="card-subtitle mb-2 text-body-secondary">subtitle 1</h6>
+                                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card’s content.</p>
+                                    <a href="#" class="card-link">Card link</a>
+                                    <a href="#" class="card-link">Another link</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="card mb-4">
+                                <div class="card-body">
+                                    <h5 class="card-title">Title</h5>
+                                    <h6 class="card-subtitle mb-2 text-body-secondary">subtitle 1</h6>
+                                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card’s content.</p>
+                                    <a href="#" class="card-link">Card link</a>
+                                    <a href="#" class="card-link">Another link</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div data-section="settings" id="page-settings-block" class="page page-7"><span class="admin-page-anchor" id="page-settings"></span>
+                <div class="container-fluid px-5">
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="card mb-4">
+                                <div class="card-body">
+                                    <h5 class="card-title">Configuration</h5>
+                                    <div class="card-text">
+                                        <div class="col-12 p-2">
+                                            Color Scheme:
+                                            <div class="form-check d-inline-block">
+                                                <input class="form-check-input" type="radio" name="color-scheme-radio" id="color-scheme-light" value="light">
+                                                <label class="form-check-label" for="color-scheme-light">
+                                                    Light
+                                                </label>
+                                            </div>
+                                            <div class="form-check d-inline-block">
+                                                <input class="form-check-input" type="radio" name="color-scheme-radio" id="color-scheme-dark" value="dark" >
+                                                <label class="form-check-label" for="color-scheme-dark">
+                                                    Dark
+                                                </label>
+                                            </div>
+                                            <div class="form-check d-inline-block">
+                                                <input class="form-check-input" type="radio" name="color-scheme-radio" id="color-scheme-auto" value="auto" checked>
+                                                <label class="form-check-label" for="color-scheme-auto">
+                                                    Auto
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="col-12 p-2">
+                                            Header Position:
+
+                                            <div class="form-check d-inline-block">
+                                                <input class="form-check-input" type="radio" name="header-position-radio" id="header-position-sticky" value="light" checked>
+                                                <label class="form-check-label" for="header-position-sticky">
+                                                    Sticky
+                                                </label>
+                                            </div>
+                                            <div class="form-check d-inline-block">
+                                                <input class="form-check-input" type="radio" name="header-position-radio" id="header-position-relative" value="dark" >
+                                                <label class="form-check-label" for="header-position-relative">
+                                                    Relative
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="col-12 p-2">
+                                            Sidebar Position:
+
+                                            <div class="form-check d-inline-block">
+                                                <input class="form-check-input" type="radio" name="sidebar-position-radio" id="sidebar-position-sticky" value="light" checked>
+                                                <label class="form-check-label" for="sidebar-position-sticky">
+                                                    Sticky
+                                                </label>
+                                            </div>
+                                            <div class="form-check d-inline-block">
+                                                <input class="form-check-input" type="radio" name="sidebar-position-radio" id="sidebar-position-relative" value="dark" >
+                                                <label class="form-check-label" for="sidebar-position-relative">
+                                                    Relative
+                                                </label>
+                                            </div>
+                                            <div class="form-check d-inline-block">
+                                                <input class="form-check-input" type="radio" name="sidebar-position-radio" id="sidebar-position-overlay" value="auto" >
+                                                <label class="form-check-label" for="sidebar-position-overlay">
+                                                    Overlay
+                                                </label>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-12 p-2">
+                                            Sidebar Responsive Sticky Position:
+
+                                            <div class="form-check d-inline-block">
+                                                <div class="d-inline-block">
+                                                    <input type="range" class="form-range d-inline-block" min="0" max="7" step="1" id="sidebar-responsive-position-sticky"/>
+                                                </div>
+                                                <label class="form-check-label d-inline-block" for="sidebar-responsive-position-sticky">
+                                                    Sticky: <span id="sidebar-responsive-position-sticky-text"></span>
+                                                </label>
+                                            </div>
+
+                                        </div>
+
+                                        <div class="col-12 p-2">
+                                            Sidebar Responsive Relative Position:
+
+                                            <div class="form-check d-inline-block">
+                                                <div class="d-inline-block">
+                                                    <input type="range" class="form-range d-inline-block" min="0" max="7" step="1" id="sidebar-responsive-position-relative"/>
+                                                </div>
+                                                <label class="form-check-label d-inline-block" for="sidebar-responsive-position-relative">
+                                                    Relative: <span id="sidebar-responsive-position-relative-text"></span>
+                                                </label>
+                                            </div>
+
+                                        </div>
+
+                                        <div class="col-12 p-2">
+                                            Sidebar Responsive Overlay Position:
+
+                                            <div class="form-check d-inline-block">
+                                                <div class="d-inline-block">
+                                                    <input type="range" class="form-range d-inline-block" min="0" max="7" step="1" id="sidebar-responsive-position-overlay"/>
+                                                </div>
+                                                <label class="form-check-label d-inline-block" for="sidebar-responsive-position-overlay">
+                                                    Overlay: <span id="sidebar-responsive-position-overlay-text"></span>
+                                                </label>
+                                            </div>
+
+                                        </div>
+
+                                        <div class="col-12 p-2">
+                                            Sidebar Style:
+
+                                            <div class="form-check d-inline-block">
+                                                <input class="form-check-input" type="radio" name="sidebar-style-radio" id="sidebar-style-block" value="block" checked>
+                                                <label class="form-check-label" for="sidebar-style-block">
+                                                    Block
+                                                </label>
+                                            </div>
+                                            <div class="form-check d-inline-block">
+                                                <input class="form-check-input" type="radio" name="sidebar-style-radio" id="sidebar-style-card" value="card" >
+                                                <label class="form-check-label" for="sidebar-style-card">
+                                                    Card
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="col-12 p-2">
+                                            Sidebar Size:
+
+                                            <div class="form-check d-inline-block">
+                                                <input class="form-check-input" type="radio" name="sidebar-size-radio" id="sidebar-size-large" value="medium" checked>
+                                                <label class="form-check-label" for="sidebar-size-large">
+                                                    Large
+                                                </label>
+                                            </div>
+                                            <div class="form-check d-inline-block">
+                                                <input class="form-check-input" type="radio" name="sidebar-size-radio" id="sidebar-size-medium" value="medium" >
+                                                <label class="form-check-label" for="sidebar-size-medium">
+                                                    Medium
+                                                </label>
+                                            </div>
+                                            <div class="form-check d-inline-block">
+                                                <input class="form-check-input" type="radio" name="sidebar-size-radio" id="sidebar-size-small" value="small" >
+                                                <label class="form-check-label" for="sidebar-size-small">
+                                                    Small
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="col-12 p-2">
+                                            Expander Graphic:
+
+                                            <div class="form-check d-inline-block">
+                                                <input class="form-check-input" type="radio" name="sidebar-expander-graphic-radio" id="sidebar-expander-caret" value="caret" checked>
+                                                <label class="form-check-label" for="sidebar-expander-caret">
+                                                    Caret
+                                                </label>
+                                            </div>
+                                            <div class="form-check d-inline-block">
+                                                <input class="form-check-input" type="radio" name="sidebar-expander-graphic-radio" id="sidebar-expander-chevron" value="chevron" >
+                                                <label class="form-check-label" for="sidebar-expander-chevron">
+                                                    Chevron
+                                                </label>
+                                            </div>
+                                            <div class="form-check d-inline-block">
+                                                <input class="form-check-input" type="radio" name="sidebar-expander-graphic-radio" id="sidebar-expander-plus" value="plus" >
+                                                <label class="form-check-label" for="sidebar-expander-plus">
+                                                    Plus
+                                                </label>
+                                            </div>
+                                            <div class="form-check d-inline-block">
+                                                <input class="form-check-input" type="radio" name="sidebar-expander-graphic-radio" id="sidebar-expander-plus-square" value="plus-square" >
+                                                <label class="form-check-label" for="sidebar-expander-plus-square">
+                                                    Plus in Square
+                                                </label>
+                                            </div>
+                                            <div class="form-check d-inline-block">
+                                                <input class="form-check-input" type="radio" name="sidebar-expander-graphic-radio" id="sidebar-expander-none" value="none" >
+                                                <label class="form-check-label" for="sidebar-expander-none">
+                                                    None
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="col-12 p-2">
+                                            Expander Position:
+
+                                            <div class="form-check d-inline-block">
+                                                <input class="form-check-input" type="radio" name="sidebar-expander-position-radio" id="sidebar-expander-left" value="medium" checked>
+                                                <label class="form-check-label" for="sidebar-expander-left">
+                                                    Left
+                                                </label>
+                                            </div>
+                                            <div class="form-check d-inline-block">
+                                                <input class="form-check-input" type="radio" name="sidebar-expander-position-radio" id="sidebar-expander-right" value="right" >
+                                                <label class="form-check-label" for="sidebar-expander-right">
+                                                    Right
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="col-12 p-2">
+                                            Sidebar Background:
+
+                                            <div class="form-check d-inline-block">
+                                                <input class="form-check-input" type="radio" name="sidebar-bg-radio" id="sidebar-bg-transparent" value="transparent" checked>
+                                                <label class="form-check-label" for="sidebar-bg-transparent">
+                                                    Transparent
+                                                </label>
+                                            </div>
+                                            <div class="form-check d-inline-block">
+                                                <input class="form-check-input" type="radio" name="sidebar-bg-radio" id="sidebar-bg-theme" value="theme" >
+                                                <label class="form-check-label" for="sidebar-bg-theme">
+                                                    Color Scheme
+                                                </label>
+                                            </div>
+                                            <div class="form-check d-inline-block">
+                                                <input class="form-check-input" type="radio" name="sidebar-bg-radio" id="sidebar-bg-inverted" value="inverted" >
+                                                <label class="form-check-label" for="sidebar-bg-inverted">
+                                                    Inverted
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="col-12 p-2">
+                                            Resets and Local Storage:
+
+                                            <div class="form-check d-inline-block">
+                                                <input class="form-check-input" type="checkbox" name="localstorage-autoload" id="localstorage-autoload" value="1" checked>
+                                                <label class="form-check-label" for="localstorage-autoload">
+                                                    Automatically load from localStorage
+                                                </label>
+                                            </div>
+                                            <div class="form-check d-inline-block">
+                                                <button class="btn btn-primary m-1 d-inline w-auto" id="reset-theme-btn">Reset to Defaults</button>
+                                                <button class="btn btn-primary m-1 d-inline w-auto" id="store-theme-btn">Save to Local Storage</button>
+                                                <button class="btn btn-primary m-1 d-inline w-auto" id="restore-theme-btn">Load From Local Storage</button>
+                                                <button class="btn btn-primary m-1 d-inline w-auto" id="clear-theme-btn">Clear Local Storage</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="card mb-4">
+                                <div class="card-body">
+                                    font size / font face / default colors <br/>
+                                    <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+                                    <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+                                    bottom
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12">
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+</div>
+<script>
+
+    panelSettings.init();
+    Dropzone.autoDiscover = false;
+    $(document).ready(function() {
+        $('#product-description').summernote();
+
+        $("#product-media-dropzone").dropzone({
+            url: "#", // No server URL
+            //autoProcessQueue: false, // Prevent automatic upload
+            addRemoveLinks: true,
+            init: function() {
+                this.on("addedfile", function(file) {
+                    // File is added, handle locally
+                    console.log("File added locally: ", file.name);
+
+                    // Example: Read file data (if image/text)
+                    let reader = new FileReader();
+                    reader.onload = function(e) {
+                        // e.target.result contains the data
+                        // You can store this in IndexedDB or localStorage
+                        console.log("FILE READ:  "+e.target.result);
+                    };
+                    reader.readAsDataURL(file);
+                });
+            }});
+    });
+
+
+</script>
+</body>
+</html>
