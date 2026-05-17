@@ -125,6 +125,7 @@ $(function() {
     });
     $("#sidebar-responsive-position-sticky").on("input",function(event){
         let text_el = $('#sidebar-responsive-position-sticky-text');
+        let text = null;
         let val = $(this).val();
         if (val == 0) {
             text = ' None';
@@ -288,11 +289,11 @@ function updateFormFields() {
     $("input:radio[name='sidebar-position-radio']").prop('checked',false);
     $('#sidebar-position-'+value).prop('checked',true);
 
-    value = panelSettings.get('sidebar-style-radio');
+    value = panelSettings.get('sidebar-style');
     $("input:radio[name='sidebar-style-radio']").prop('checked',false);
     $('#sidebar-style-'+value).prop('checked',true);
 
-    value = panelSettings.get('sidebar-size-radio');
+    value = panelSettings.get('sidebar-size');
     $("input:radio[name='sidebar-size-radio']").prop('checked',false);
     $('#sidebar-size-'+value).prop('checked',true);
 
@@ -300,7 +301,7 @@ function updateFormFields() {
     $("input:radio[name='sidebar-expander-graphic-radio']").prop('checked',false);
     $('#sidebar-expander-'+value).prop('checked',true);
 
-    value = panelSettings.get('sidebar-expander-position-radio');
+    value = panelSettings.get('sidebar-expander-position');
     $("input:radio[name='sidebar-expander-position-radio']").prop('checked',false);
     $('#sidebar-expander-position-'+value).prop('checked',true);
 

@@ -3,9 +3,9 @@ class WebsiteDisplaySettings {
     constructor(settings = null,options = null,defaults = null) {
         this.no_value = {'no_value': true};
         this.localStorageHandle = 'WebsiteDisplaySettings';
-        this.settings = {};
-        this.setting_options = {};
-        this.setting_defaults = {};
+        this.settings = settings != null ? settings : {};
+        this.setting_options = options != null ? options : {};
+        this.setting_defaults = defaults != null ? defaults : {};
         this.setting_helpers = {};
     }
     init() {
@@ -243,15 +243,10 @@ class AdminPanelSettings extends WebsiteDisplaySettings{
         this.setting_helpers['sidebar-style'] = function(value = this.no_value) {
             if (value === this.no_value) {
                 //read helper
-                if ($(".left-menu-aside").hasClass('sidebar-sticky')) {
-                    return 'sticky';
-                } else if ($(".left-menu-aside").hasClass('sidebar-relative')) {
-                    return 'relative';
-                } else if ($(".left-menu-aside").hasClass('sidebar-fixed')) {
-                    return 'overlay';
-                } else {
-                    return this.no_value;
+                if ($(".left-menu-aside .left-sidebar").hasClass('card')) {
+                    return 'card';
                 }
+                return 'block';
             } else {
                 //write helper
                 if (this.setting_options['sidebar-style'].includes(value)) {
@@ -400,9 +395,11 @@ class AdminPanelSettings extends WebsiteDisplaySettings{
                 //write helper
                 if (this.setting_options['navigation-style'].includes(value)) {
                     if (value == 'paged') {
-                        $("body").removeClass('nav-style-paged');
+                        $("body").addClass('nav-style-paged');
+                        $("body").removeClass('nav-style-continuous');
                     } else {
                         $("body").addClass('nav-style-continuous');
+                        $("body").removeClass('nav-style-paged');
                     }
                     return true;
                 } else {
